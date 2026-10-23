@@ -1,0 +1,347 @@
+/* ===== Anomaly Detection Page Styles ===== */
+
+.anomaly-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.anomaly-stats-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #f87171;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* Threat Heatmap Grid */
+.threat-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.threat-metric-card {
+  padding: 1.25rem;
+}
+
+.threat-metric-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.threat-label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.threat-val {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.threat-desc {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+}
+
+/* Split Layout */
+.anomaly-split-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .anomaly-split-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.anomaly-list-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filter-header-card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+}
+
+.search-wrap input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-text-primary);
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+.severity-filter-btns {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.sev-btn {
+  background: transparent;
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sev-btn.active {
+  background: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+  color: #fff;
+  font-weight: 500;
+}
+
+.anomaly-cards-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: calc(100vh - 280px);
+  overflow-y: auto;
+}
+
+.anomaly-card-item {
+  padding: 1.15rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid var(--color-border);
+}
+
+.anomaly-card-item:hover {
+  background: rgba(51, 115, 246, 0.05);
+  border-color: rgba(51, 115, 246, 0.3);
+}
+
+.anomaly-card-item.active-selected {
+  border-color: var(--color-primary-500);
+  background: rgba(51, 115, 246, 0.08);
+  box-shadow: 0 0 15px rgba(51, 115, 246, 0.15);
+}
+
+.anom-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.anom-time {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+.anom-inst-title {
+  font-size: 0.92rem;
+  color: var(--color-text-primary);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.anom-cat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.6rem;
+}
+
+.anom-item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.anom-doc-name {
+  color: var(--color-text-secondary);
+}
+
+.anom-conf {
+  color: var(--color-primary-400);
+  font-family: var(--font-mono);
+}
+
+/* Inspector Pane */
+.inspector-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inspector-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.25rem;
+}
+
+.inspector-case-id {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-primary-400);
+}
+
+.inspector-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0.25rem 0;
+}
+
+.inspector-inst-name {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+.forensic-findings-box {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.forensic-findings-box h4 {
+  font-size: 0.95rem;
+  color: #fca5a5;
+}
+
+.forensic-findings-box p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.affected-field-pill {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  color: #fef08a;
+}
+
+/* Visual Tamper Mock */
+.tamper-visual-preview {
+  background: #0f172a;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.visual-preview-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.visual-preview-mock {
+  background: #1e293b;
+  padding: 1.25rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.mock-text-line.clean {
+  color: #94a3b8;
+}
+
+.mock-text-line.tampered {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+}
+
+.tamper-glow {
+  color: #f87171;
+  font-weight: 700;
+}
+
+.tamper-marker {
+  font-size: 0.65rem;
+  background: var(--color-danger);
+  color: #fff;
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+/* Resolution */
+.resolution-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.25rem;
+}
+
+.resolution-section h4 {
+  font-size: 1.05rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.resolution-sub {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.resolution-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
